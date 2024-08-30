@@ -1,41 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+namespace Cadeteria;
 
-namespace Cadeteria
-{
-    public class Cadeteria
+public class Cadeteria {
+    private string nombre;
+    private int numero;
+    private List<Cadete> listaCadetes; // creo lista de cadetes que existirá cuando se cree cadetería
+    public Cadeteria()
     {
-        private List<Cadete> cadetes;
-        private List<Pedido> pedidos;
-
-        public Cadeteria()
-        {
-            cadetes = new List<Cadete>();
-            pedidos = new List<Pedido>();
-        }
-
-        public void AgregarPedido(Pedido pedido, Cadete cadete)
-        {
-            pedidos.Add(pedido);
-            cadete.AsignarPedido(pedido);
-        }
-
-        public void ReasignarPedido(Pedido pedido, Cadete nuevoCadete)
-        {
-            Cadete cadeteAnterior = pedido.CadeteAsignado;
-            cadeteAnterior.EliminarPedido(pedido);
-            nuevoCadete.AsignarPedido(pedido);
-        }
-
-        public void GenerarInforme()
-        {
-            foreach (var cadete in cadetes)
-            {
-                Console.WriteLine($"Cadete: {cadete.Nombre}, Entregas: {cadete.PedidosEntregados}, Monto Ganado: ${cadete.CalcularMontoGanado()}");
-            }
-            var promedio = cadetes.Average(c => c.PedidosEntregados);
-            Console.WriteLine($"Promedio de envíos por cadete: {promedio}");
-        }
     }
+
+    public string Nombre { get => nombre; set => nombre = value; }
+    public int Numero { get => numero; set => numero = value; }
+    public List<Cadete> ListaCadetes { get => listaCadetes; set => listaCadetes = value; }
 }
