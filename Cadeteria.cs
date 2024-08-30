@@ -6,6 +6,7 @@ public class Cadeteria {
     private List<Cadete> listaCadetes; // creo lista de cadetes que existirá cuando se cree cadetería
     public Cadeteria()
     {
+        listaCadetes = new List<Cadete>();
     }
 
     public string Nombre { get => nombre; set => nombre = value; }

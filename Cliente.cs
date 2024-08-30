@@ -4,7 +4,7 @@ public class Cliente {
     private string nombre;
     private string direcion;
     private string telefono;
-    private string datosReferencia;
+    private string datosReferencia; // referencia de direccion
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Direcion { get => direcion; set => direcion = value; }
