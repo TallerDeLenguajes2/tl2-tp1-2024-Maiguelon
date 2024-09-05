@@ -17,13 +17,13 @@ public class Pedido
 
     public void VerDireccionCliente()
     {
-        Console.WriteLine(Cliente.Direcion);
+        Console.WriteLine(Cliente.Direccion);
     }
 
     public void VerDatosCliente()
     {
         Console.WriteLine(Cliente.Nombre);
-        Console.WriteLine(Cliente.Direcion);
+        Console.WriteLine(Cliente.Direccion);
         Console.WriteLine(Cliente.Telefono);
         Console.WriteLine(Cliente.DatosReferencia);
     }
