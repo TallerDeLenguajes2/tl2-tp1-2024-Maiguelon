@@ -19,8 +19,26 @@ public class Cadete
     public int Telefono { get => telefono; set => telefono = value; }
     public List<Pedido> ListaPedidos { get => listaPedidos; set => listaPedidos = value; }
 
-    public void JornalACobrar() {
+    public void JornalACobrar()
+    {
         int jornal = ListaPedidos.Count * 500;
         Console.WriteLine($"Jornal: {jornal}");
     }
+
+    // El método solo escribe hasta la observación
+    public void listarPedidos()
+    {
+        if (listaPedidos.Count == 0)
+        {
+            Console.WriteLine("No hay pedidos asignados.");
+        }
+        else
+        {
+            foreach (Pedido pedido in listaPedidos)
+            {
+                Console.WriteLine($"Pedido N° {pedido.Numero}, Observación: {pedido.Observacion}");
+            }
+        }
+    }
+
 }
