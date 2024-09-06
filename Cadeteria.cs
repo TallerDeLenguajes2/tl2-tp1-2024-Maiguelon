@@ -12,7 +12,6 @@ public class Cadeteria
 
     public string Nombre { get => nombre; set => nombre = value; }
     public int Numero { get => numero; set => numero = value; }
-    public List<Cadete> ListaCadetes { get => listaCadetes; set => listaCadetes = value; }
 
     public Cadete cadetePorId(int idCadete)
     {

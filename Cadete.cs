@@ -17,11 +17,10 @@ public class Cadete
     public string Nombre { get => nombre; set => nombre = value; }
     public int Direccion { get => direccion; set => direccion = value; }
     public int Telefono { get => telefono; set => telefono = value; }
-    public List<Pedido> ListaPedidos { get => listaPedidos; set => listaPedidos = value; }
 
     public void JornalACobrar()
     {
-        int jornal = ListaPedidos.Count * 500;
+        int jornal = listaPedidos.Count * 500;
         Console.WriteLine($"Jornal: {jornal}");
     }
 
