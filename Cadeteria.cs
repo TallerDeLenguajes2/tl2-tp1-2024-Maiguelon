@@ -1,9 +1,9 @@
-namespace Cadeteria
+namespace EspacioCadeteria
 {
     public class Cadeteria
     {
         private string nombre;
-        private int numero;
+        private string numero;
         private List<Cadete> listaCadetes; // lista de cadetes
 
         // Constructor
@@ -14,7 +14,7 @@ namespace Cadeteria
 
         // Propiedades
         public string Nombre { get => nombre; set => nombre = value; }
-        public int Numero { get => numero; set => numero = value; }
+        public string Numero { get => numero; set => numero = value; }
 
         // Método para buscar cadetes por su ID
         public Cadete cadetePorId(int idCadete)

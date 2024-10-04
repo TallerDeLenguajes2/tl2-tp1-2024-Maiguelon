@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-namespace Cadeteria;
+using EspacioCadeteria;
 public class CargadorCsv
 {
     public static Cadeteria CargarCadeteria(string archivoCsv)
@@ -14,7 +14,7 @@ public class CargadorCsv
                 return new Cadeteria
                 {
                     Nombre = partes[0].Trim(),
-                    Numero = int.Parse(partes[1].Trim()) // Convierte el número a int
+                    Numero = partes[1].Trim() // Convierte el número a int
                 };
             }
             return null;

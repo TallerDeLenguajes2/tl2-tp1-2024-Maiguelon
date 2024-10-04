@@ -1,4 +1,4 @@
-namespace Cadeteria;
+
 
 public class Pedido
 {
