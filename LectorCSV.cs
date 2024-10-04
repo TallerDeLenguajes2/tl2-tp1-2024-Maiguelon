@@ -35,7 +35,7 @@ public class CargadorCsv
                     Id = int.Parse(partes[0].Trim()), // Convierte el ID a int
                     Nombre = partes[1].Trim(),
                     Direccion = partes[2].Trim(),
-                    Telefono = partes[3].Trim() // Cambiar a string si es necesario
+                    Telefono = partes[3].Trim() 
                 };
                 cadetes.Add(cadete);
             }

@@ -1,43 +1,63 @@
-namespace Cadeteria;
-
-public class Cadete
+namespace Cadeteria
 {
-    private int id;
-    private string nombre;
-    private string direccion;
-    private string telefono;
-    private List<Pedido> listaPedidos;
-
-    public Cadete()
+    public class Cadete
     {
-        listaPedidos = new List<Pedido>();
-    }
+        private int id;
+        private string nombre;
+        private string direccion;
+        private string telefono;
+        private List<Pedido> listaPedidos;
 
-    public int Id { get => id; set => id = value; }
-    public string Nombre { get => nombre; set => nombre = value; }
-    public string Direccion { get => direccion; set => direccion = value; }
-    public string Telefono { get => telefono; set => telefono = value; }
-
-    public void JornalACobrar()
-    {
-        int jornal = listaPedidos.Count * 500;
-        Console.WriteLine($"Jornal: {jornal}");
-    }
-
-    // El método solo escribe hasta la observación
-    public void listarPedidos()
-    {
-        if (listaPedidos.Count == 0)
+        public Cadete()
         {
-            Console.WriteLine("No hay pedidos asignados.");
+            listaPedidos = new List<Pedido>();
         }
-        else
+
+        public int Id { get => id; set => id = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+
+        public void JornalACobrar()
         {
-            foreach (Pedido pedido in listaPedidos)
+            int jornal = listaPedidos.Count * 500;
+            Console.WriteLine($"Jornal: {jornal}");
+        }
+
+        // Método para listar los pedidos
+        public void listarPedidos()
+        {
+            if (listaPedidos.Count == 0)
             {
-                Console.WriteLine($"Pedido N° {pedido.Numero}, Observación: {pedido.Observacion}");
+                Console.WriteLine("No hay pedidos asignados.");
+            }
+            else
+            {
+                foreach (Pedido pedido in listaPedidos)
+                {
+                    Console.WriteLine($"Pedido N° {pedido.Numero}, Observación: {pedido.Observacion}");
+                }
             }
         }
-    }
 
+        // Método para buscar y eliminar un pedido
+        public Pedido BuscarYEliminarPedido(int numeroPedido)
+        {
+            Pedido pedido = listaPedidos.FirstOrDefault(p => p.Numero == numeroPedido);
+
+            if (pedido != null)
+            {
+                listaPedidos.Remove(pedido);  // Eliminar el pedido de la lista
+                return pedido;  // Retornar el pedido eliminado
+            }
+
+            return null;  // Si no lo encuentra, retorna null
+        }
+
+        // Método para agregar un pedido
+        public void AgregarPedido(Pedido pedido)
+        {
+            listaPedidos.Add(pedido);  // Agregar el pedido a la lista
+        }
+    }
 }
